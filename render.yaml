@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: hdr-converter
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    preDeployCommand: |
+      apt-get update
+      apt-get install -y ffmpeg
